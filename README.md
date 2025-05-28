@@ -20,12 +20,8 @@ Make sure to restart your terminal afterwards to ensure that the uv command gets
 
 ### Project Setup
 
-1. Create and initialize the project:
+1. initialize the project:
 ```bash
-# Create a new directory for our project
-uv init mcp-server
-cd mcp-server
-
 # Create virtual environment and activate it
 uv venv
 source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
@@ -34,12 +30,7 @@ source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
 uv add "mcp[cli]" httpx python-dotenv beautifulsoup4
 ```
 
-2. Create the server implementation file:
-```bash
-touch main.py
-```
-
-3. Configure environment variables:
+2. Configure environment variables:
 ```bash
 # Create a .env file
 touch .env
