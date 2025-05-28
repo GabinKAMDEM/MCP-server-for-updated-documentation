@@ -31,13 +31,24 @@ uv venv
 source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
 
 # Install dependencies
-uv add "mcp[cli]" httpx
+uv add "mcp[cli]" httpx python-dotenv beautifulsoup4
 ```
 
 2. Create the server implementation file:
 ```bash
 touch main.py
 ```
+
+3. Configure environment variables:
+```bash
+# Create a .env file
+touch .env
+
+# Add your Serper API key
+echo "SERPER_API_KEY=your_api_key_here" >> .env
+```
+
+You can get a Serper API key by signing up at [serper.dev](https://serper.dev).
 
 ### Running the Server
 
@@ -80,4 +91,5 @@ If your server isn't being picked up by Claude Desktop:
 - Verify the absolute path in the configuration is correct
 - Ensure uv is properly installed and accessible
 - Check Claude Desktop logs for any error messages
+- Verify that your `.env` file exists and contains the required `SERPER_API_KEY`
 
